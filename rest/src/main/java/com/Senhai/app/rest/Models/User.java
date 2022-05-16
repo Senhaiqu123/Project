@@ -5,11 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 
+
 @Entity
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column
@@ -32,11 +33,11 @@ public class User {
         this.id = id;
     }
 
-    public String getFrirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFrirstName(String frirstName) {
+    public void setFirstName(String frirstName) {
         this.firstName = frirstName;
     }
 

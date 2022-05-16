@@ -24,7 +24,7 @@ public class ApiControllers {
     }
 
     @PostMapping(value="/save")
-    public String saveUser(User user){
+    public String saveUser(@RequestBody User user){
         userRepo.save(user);
         return "saved...";
     }
@@ -33,7 +33,7 @@ public class ApiControllers {
     @PutMapping(value="/update/{id}")
     public String updateUser(@PathVariable long id, @RequestBody User user) {
         User updateUser = userRepo.findById(id).get();
-        updateUser.setFrirstName(user.getFrirstName());
+        updateUser.setFirstName(user.getFirstName());
         updateUser.setLastName(user.getLastName());
         updateUser.setOccupation(user.getOccupation());
         updateUser.setAge(user.getAge());
