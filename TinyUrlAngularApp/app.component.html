@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container">
+            <div >
+                <h1 >TinyUrl</h1>
+            </div>
+        
+        <div >
+            <div >
+                <input #url style="width: 500px" type="text"  
+                 placeholder="Please enter your url:" 
+                 (input)="inputUrl(url.value)" [value]="input_url">
+                <button id="shorten" (click)="createUrl(input_url)">Create</button>
+                <p id="tinyurl-link" class="code"></p>
+            </div>
+        </div>
+        <p *ngIf="new_url" class="error-msg">{{new_url}}</p>
+
+    </div>
+</body>
+
+</html>
